@@ -1,0 +1,262 @@
+/* Responsive Styles */
+
+/* Base Styles - Already Mobile First */
+/* For devices smaller than 576px - small phones */
+@media (max-width: 576px) {
+  :root {
+    --font-size-hero: 32px;
+    --font-size-xxl: 28px;
+    --font-size-xl: 22px;
+    --font-size-lg: 18px;
+    --font-size-md: 16px;
+    --spacing-xxl: 32px;
+    --spacing-xl: 24px;
+    --spacing-lg: 16px;
+  }
+
+  .section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: var(--spacing-lg);
+  }
+
+  .hero-text h1 {
+    font-size: var(--font-size-hero);
+  }
+
+  .hero-text h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  .hero-text p {
+    font-size: var(--font-size-md);
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-lg);
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* For devices between 577px and 768px - large phones and small tablets */
+@media (min-width: 577px) and (max-width: 768px) {
+  :root {
+    --font-size-hero: 36px;
+    --font-size-xxl: 30px;
+  }
+
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: var(--spacing-xl);
+  }
+
+  .hero-image {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+}
+
+/* For devices between 769px and 992px - tablets and small laptops */
+@media (min-width: 769px) and (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For devices between 993px and 1200px - laptops and desktops */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .section {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+}
+
+/* Header Responsive Styles */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .header-container {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .theme-toggle {
+    margin-right: var(--spacing-md);
+  }
+}
+
+/* Tablet Landscape / Small Desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .about-content {
+    gap: var(--spacing-lg);
+  }
+  
+  .contact-container {
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Ensure Minimum Margins on Very Small Screens */
+@media (max-width: 360px) {
+  .section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-sm);
+  }
+  
+  .project-info {
+    padding: var(--spacing-md);
+  }
+  
+  .contact-form-container {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* For Large Desktop Screens */
+@media (min-width: 1500px) {
+  .section {
+    max-width: 1400px;
+  }
+  
+  .header-container {
+    max-width: 1400px;
+  }
+  
+  .footer-content,
+  .footer-bottom {
+    max-width: 1400px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  header, 
+  footer,
+  .theme-toggle,
+  .mobile-menu-toggle,
+  .mobile-menu,
+  .cta-buttons,
+  .contact-form-container,
+  .social-links {
+    display: none !important;
+  }
+  
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .app-container {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .section {
+    padding: 20px 0 !important;
+    page-break-inside: avoid;
+  }
+  
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+  
+  .project-card,
+  .skill-item,
+  .education-item {
+    break-inside: avoid;
+  }
+}
+
+/* Fix for iOS Safari 100vh Issue */
+@supports (-webkit-touch-callout: none) {
+  .hero {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Landscape Mode Warning for Mobile */
+@media (max-height: 450px) and (orientation: landscape) {
+  .landscape-warning {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-md);
+  }
+}
